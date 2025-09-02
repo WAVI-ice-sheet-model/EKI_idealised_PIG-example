@@ -38,6 +38,7 @@ This example using Kalman Ensembling to constrain several parameters: weertman_c
 To run, 
 
 ```
+chmod +x *.sh
 ./run_EKP.sh
 ```
 
