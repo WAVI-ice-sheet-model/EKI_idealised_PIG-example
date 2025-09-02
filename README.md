@@ -35,7 +35,7 @@ This example using Kalman Ensembling to constrain several parameters: weertman_c
 
 ```run_EKP.sh``` - sets up julia packages and runs the EKP with the command ```model_ensemble -p -rt 30 -st 10 -ct 30 -v ensemble.yaml```
 
-# To run: 
+## To run: 
 
 ```
 chmod +x *.sh
