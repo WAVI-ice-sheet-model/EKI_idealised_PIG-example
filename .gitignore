@@ -1,0 +1,5 @@
+.vscode/
+ensemble/
+logs/
+venv/
+Manifest.toml
