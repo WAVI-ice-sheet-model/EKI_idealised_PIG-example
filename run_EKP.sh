@@ -3,17 +3,6 @@
 # Install required Python packages
 pip install ruamel.yaml
 
-# Get number of iterations from user
-echo "Enter number of EKI iterations (or press Enter for default 20):"
-read -r MAX_ITERS
-if [ -z "$MAX_ITERS" ]; then
-    MAX_ITERS=20
-fi
-echo "Using $MAX_ITERS iterations"
-
-sed -i "s/max_iters: [0-9]\+/max_iters: $MAX_ITERS/g" ensemble.yaml
-sed -i "s/check_max.sh [0-9]\+/check_max.sh $MAX_ITERS/g" ensemble.yaml
-
 # Get number of ensemble members from user
 echo "Enter number of ensemble members (or press Enter for default 10):"
 read -r N_MEMBERS
@@ -21,8 +10,6 @@ if [ -z "$N_MEMBERS" ]; then
     N_MEMBERS=10
 fi
 echo "Using $N_MEMBERS ensemble members"
-
-sed -i "s/initialize_EKP.jl output truth.jld2 eki.jld2 ..\/priors.toml [0-9]\+/initialize_EKP.jl output truth.jld2 eki.jld2 ..\/priors.toml $N_MEMBERS/g" ensemble.yaml
 
 # add correct number of members to runs in ensemble.yaml
 python3 -c "
@@ -46,6 +33,18 @@ else:
 yaml.dump(data, open(f, 'w'))
 " $N_MEMBERS
 
+sed -i "s/initialize_EKP.jl output truth.jld2 eki.jld2 ..\/priors.toml [0-9]\+/initialize_EKP.jl output truth.jld2 eki.jld2 ..\/priors.toml $N_MEMBERS/g" ensemble.yaml
+
+# Get number of iterations from user
+echo "Enter number of EKI iterations (or press Enter for default 20):"
+read -r MAX_ITERS
+if [ -z "$MAX_ITERS" ]; then
+    MAX_ITERS=20
+fi
+echo "Using $MAX_ITERS iterations"
+
+sed -i "s/max_iters: [0-9]\+/max_iters: $MAX_ITERS/g" ensemble.yaml
+sed -i "s/check_max.sh [0-9]\+/check_max.sh $MAX_ITERS/g" ensemble.yaml
 
 # Get job name prefix from user
 echo "Enter a name for your ensemble jobs (or press Enter to use your username):"
