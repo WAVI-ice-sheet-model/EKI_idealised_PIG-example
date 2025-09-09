@@ -9,7 +9,7 @@ ensemble:
   post_process: 
     - name:     execute
       args:
-        cmd:    "echo PLOTTING of output in ensemble/output using plot_EKP.jl - needs work"
+        cmd:    "/data/hpcdata/users/thozwa/.juliaup/bin/julia --project plot_EKP.jl ensemble/output/eki.jld2"
 
   batch_config:
     templatedir:  ../template
@@ -19,16 +19,16 @@ ensemble:
     - ENVS.j2
     email:        someone@example.com
     job_file:     run_computer_model.sh
-    cluster:      long
+    cluster:      rocky
     nodes:        1
-    ntasks:       1
-    length:       "10:00:00"
-    maxruns:      10
-    maxjobs:      10
+    ntasks:       8
+    length:       "02:00:00"
+    maxruns:      20
+    maxjobs:      20
     repeat:       True
 
   batches:
-    - name:       sin_test
+    - name:       thomas_eki
       basedir:    ./ensemble
       pre_batch:
         - name:   check
@@ -49,11 +49,11 @@ ensemble:
             cmd:  'ln -s ../Project.toml'
         - name:   execute
           args:
-            cmd:  '/hpcpackages/julia/1.8.3/bin/julia --project ../generate_data.jl output truth.jld2 235487'
+            cmd:  '/data/hpcdata/users/thozwa/.juliaup/bin/julia --project ../generate_data.jl output truth.jld2 235487'
             log:  True
         - name:   execute
           args:
-           cmd:  '/hpcpackages/julia/1.8.3/bin/julia --project ../initialize_EKP.jl output truth.jld2 eki.jld2 ../priors.toml 3 49957'
+           cmd:  '/data/hpcdata/users/thozwa/.juliaup/bin/julia --project ../initialize_EKP.jl output truth.jld2 eki.jld2 ../priors.toml 20 49957'
            log:  True
 
       pre_run:    []
@@ -66,13 +66,24 @@ ensemble:
         - {}
         - {}
         - {}
-        - {}    
         - {}
+        - {}
+        - {}
+        - {}
+        - {}
+        - {}
+        - {}
+        - {}
+        - {}
+        - {}
+        - {}
+        - {}       
+
       post_run:   []
       post_batch: 
         - name:   execute
           args:
-            cmd:  '/hpcpackages/julia/1.8.3/bin/julia --project ../update_EKP.jl output eki.jld2 `wc -m <REPEAT`'
+            cmd:  '/data/hpcdata/users/thozwa/.juliaup/bin/julia --project ../update_EKP.jl output eki.jld2 `wc -m <REPEAT`'
             log:  True
         - name:   execute
           args:
