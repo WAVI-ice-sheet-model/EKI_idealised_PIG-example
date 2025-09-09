@@ -53,7 +53,7 @@ ensemble:
             log:  True
         - name:   execute
           args:
-           cmd:  '/users/miradh/.julia/juliaup/julia-1.11.6+0.x64.linux.gnu/bin/julia --project ../initialize_EKP.jl output truth.jld2 eki.jld2 ../priors.toml 3 49957'
+           cmd:  '/users/miradh/.julia/juliaup/julia-1.11.6+0.x64.linux.gnu/bin/julia --project ../initialize_EKP.jl output truth.jld2 eki.jld2 ../priors.toml 10 49957'
            log:  True
 
       pre_run:    []
