@@ -28,7 +28,7 @@ ensemble:
     repeat:       True
 
   batches:
-    - name:       sin_test
+    - name:       eki
       basedir:    ./ensemble
       pre_batch:
         - name:   check
