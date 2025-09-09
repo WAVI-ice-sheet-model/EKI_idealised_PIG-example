@@ -19,7 +19,8 @@ if [ -z "$JOB_PREFIX" ]; then
 fi
 echo "Using job prefix: $JOB_PREFIX"
 
-# Replace sin_test with user-specified name in ensemble.yaml
+# Reset ensemble_member job prefix if any previous changes have occurred and insert the new one
+sed -i "s/[a-zA-Z0-9_]*_ensemble_member/ensemble_member/g" ensemble.yaml
 sed -i "s/ensemble_member/${JOB_PREFIX}_ensemble_member/g" ensemble.yaml
 
 source venv/bin/activate
