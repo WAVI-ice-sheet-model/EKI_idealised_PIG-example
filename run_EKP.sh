@@ -1,5 +1,16 @@
 #!/bin/bash
 
+# Get number of iterations from user
+echo "Enter number of EKI iterations (or press Enter for default 20):"
+read -r MAX_ITERS
+if [ -z "$MAX_ITERS" ]; then
+    MAX_ITERS=20
+fi
+echo "Using $MAX_ITERS iterations"
+
+sed -i "s/max_iters: [0-9]*/max_iters: $MAX_ITERS/g" ensemble.yaml
+sed -i "s/check_max.sh [0-9]*/check_max.sh $MAX_ITERS/g" ensemble.yaml
+
 # Get job name prefix from user
 echo "Enter a name for your ensemble jobs (or press Enter to use your username):"
 read -r JOB_PREFIX
