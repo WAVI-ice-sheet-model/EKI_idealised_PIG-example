@@ -8,8 +8,8 @@ if [ -z "$MAX_ITERS" ]; then
 fi
 echo "Using $MAX_ITERS iterations"
 
-sed -i "s/max_iters: [0-9]*/max_iters: $MAX_ITERS/g" ensemble.yaml
-sed -i "s/check_max.sh [0-9]*/check_max.sh $MAX_ITERS/g" ensemble.yaml
+sed -i "s/max_iters: [0-9]\+/max_iters: $MAX_ITERS/g" ensemble.yaml
+sed -i "s/check_max.sh [0-9]\+/check_max.sh $MAX_ITERS/g" ensemble.yaml
 
 # Get job name prefix from user
 echo "Enter a name for your ensemble jobs (or press Enter to use your username):"
