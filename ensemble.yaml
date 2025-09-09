@@ -19,7 +19,7 @@ ensemble:
     - ENVS.j2
     email:        someone@example.com
     job_file:     run_computer_model.sh
-    cluster:      long
+    cluster:      rocky
     nodes:        1
     ntasks:       1
     length:       "02:00:00"
