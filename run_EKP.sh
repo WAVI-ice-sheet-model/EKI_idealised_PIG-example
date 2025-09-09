@@ -35,6 +35,8 @@ yaml.dump(data, open(f, 'w'))
 
 sed -i "/initialize_EKP.jl/,/49957'/{s/[0-9]\+ 49957/$N_MEMBERS 49957/}" ensemble.yaml
 
+sed -i "s/maxruns: [0-9]\+/maxruns: $N_MEMBERS/g" ensemble.yaml
+
 # Get number of iterations from user
 echo "Enter number of EKI iterations (or press Enter for default 20):"
 read -r MAX_ITERS
