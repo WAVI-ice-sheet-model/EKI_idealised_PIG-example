@@ -40,7 +40,6 @@ ln -sf `realpath ../output`
 ln -sf `realpath ../../input_data`
 
 echo "Iteration $ITERATION Model {{ run.idx }}"
-#julia --project -e 'using Pkg; Pkg.add(PackageSpec(url="https://github.com/RJArthern/WAVI.jl.git",rev="ParallelDev"));Pkg.instantiate()'
-/hpcpackages/julia/1.8.3/bin/julia --project run_computer_model.jl {{ run.out_dir }} {{ run.data_path }} $ITERATION {{ run.idx + 1 }}
+/users/miradh/.julia/juliaup/julia-1.11.6+0.x64.linux.gnu/bin/julia --project run_computer_model.jl {{ run.out_dir }} {{ run.data_path }} $ITERATION {{ run.idx + 1 }}
 
 echo -ne "\n{{ run.idx }}" >>RUN_ITERS
