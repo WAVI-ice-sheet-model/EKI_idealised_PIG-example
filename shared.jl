@@ -8,5 +8,4 @@ using EnsembleKalmanProcesses.ParameterDistributions
 using EnsembleKalmanProcesses.Localizers
 using Statistics
 using Plots
-using YAML
 const EKP = EnsembleKalmanProcesses
