@@ -1,5 +1,5 @@
 # Description
-This example describes how to install and use [EnsembleKalmanProcesses][1] alongside the [model-ensembler][2], using an idealised Pine Island example. This example is derived from the code in the original library example for learning parameterisations of a sine wave (examples/SinusoidInterface). This current set up is for use on the BAS HPC, using an old version of julia (1.8.3) which is not compatible with later versions of EnsembleKalmanProcesses (versions 2.4.0 and later). This example should therefore default to using version 2.3.1 if not specified in the Project.toml file. 
+This example describes how to install and use [EnsembleKalmanProcesses][1] alongside the [model-ensembler][2], using an idealised Pine Island example. This example is derived from the code in the original library example for learning parameterisations of a sine wave (examples/SinusoidInterface). This current set up is for use on the BAS HPC.
 
 ### Setup
 
@@ -36,6 +36,8 @@ This example using Kalman Ensembling to constrain several parameters: weertman_c
 ```run_EKP.sh``` - sets up julia packages and runs the EKP with the command ```model_ensemble -p -rt 30 -st 10 -ct 30 -v ensemble.yaml```
 
 ## To run: 
+
+Change the julia filepathways in ```ensemble.yaml```, ```template/run_computer_model.sh.j2```, and ```run_EKP.sh``` to your local installation. 
 
 ```
 chmod +x *.sh
