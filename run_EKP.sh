@@ -21,6 +21,29 @@ echo "Using $N_MEMBERS ensemble members"
 
 sed -i "s/initialize_EKP.jl output truth.jld2 eki.jld2 ..\/priors.toml [0-9]\+/initialize_EKP.jl output truth.jld2 eki.jld2 ..\/priors.toml $N_MEMBERS/g" ensemble.yaml
 
+ # add correct number of members to runs in ensemble.yaml
+ 26 python3 -c "
+ 27 import sys
+ 28 from ruamel.yaml import YAML
+ 29
+ 30 f = 'ensemble.yaml'
+ 31 n = int(sys.argv[1])
+ 32
+ 33 yaml = YAML()
+ 34 yaml.preserve_quotes = True
+ 35 data = yaml.load(open(f))
+ 36
+ 37 # Update runs: works for top-level or nested ensemble->batches
+ 38 if 'ensemble' in data and 'batches' in data['ensemble']:
+ 39     for batch in data['ensemble']['batches']:
+ 40         batch['runs'] = [{} for _ in range(n)]
+ 41 else:
+ 42     data['runs'] = [{} for _ in range(n)]
+ 43
+ 44 yaml.dump(data, open(f, 'w'))
+ 45 " $N_MEMBERS
+
+
 # Get job name prefix from user
 echo "Enter a name for your ensemble jobs (or press Enter to use your username):"
 read -r JOB_PREFIX
