@@ -33,7 +33,7 @@ else:
 yaml.dump(data, open(f, 'w'))
 " $N_MEMBERS
 
-sed -i "s/initialize_EKP.jl output truth.jld2 eki.jld2 ..\/priors.toml [0-9]\+ 49957/initialize_EKP.jl output truth.jld2 eki.jld2 ..\/priors.toml $N_MEMBERS 49957/g" ensemble.yaml
+sed -i "/initialize_EKP.jl/,/49957'/{s/[0-9]\+ 49957/$N_MEMBERS 49957/}" ensemble.yaml
 
 # Get number of iterations from user
 echo "Enter number of EKI iterations (or press Enter for default 20):"
