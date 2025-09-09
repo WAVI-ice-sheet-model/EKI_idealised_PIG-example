@@ -1,5 +1,16 @@
 #!/bin/bash
 
+# Get job name prefix from user
+echo "Enter a name for your ensemble jobs (or press Enter to use your username):"
+read -r JOB_PREFIX
+if [ -z "$JOB_PREFIX" ]; then
+    JOB_PREFIX=$USER
+fi
+echo "Using job prefix: $JOB_PREFIX"
+
+# Replace sin_test with user-specified name in ensemble.yaml
+sed -i "s/eki/${JOB_PREFIX}_eki/g" ensemble.yaml
+
 source venv/bin/activate
 # Setup Julia packages
 echo "  Setting up Julia packages..."
