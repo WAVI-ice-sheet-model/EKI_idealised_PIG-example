@@ -22,7 +22,7 @@ ensemble:
     cluster:      long
     nodes:        1
     ntasks:       1
-    length:       "10:00:00"
+    length:       "02:00:00"
     maxruns:      10
     maxjobs:      10
     repeat:       True
@@ -49,11 +49,11 @@ ensemble:
             cmd:  'ln -s ../Project.toml'
         - name:   execute
           args:
-            cmd:  '/hpcpackages/julia/1.8.3/bin/julia --project ../generate_data.jl output truth.jld2 235487'
+            cmd:  '/users/miradh/.julia/juliaup/julia-1.11.6+0.x64.linux.gnu/bin/julia --project ../generate_data.jl output truth.jld2 235487'
             log:  True
         - name:   execute
           args:
-           cmd:  '/hpcpackages/julia/1.8.3/bin/julia --project ../initialize_EKP.jl output truth.jld2 eki.jld2 ../priors.toml 3 49957'
+           cmd:  '/users/miradh/.julia/juliaup/julia-1.11.6+0.x64.linux.gnu/bin/julia --project ../initialize_EKP.jl output truth.jld2 eki.jld2 ../priors.toml 3 49957'
            log:  True
 
       pre_run:    []
@@ -72,7 +72,7 @@ ensemble:
       post_batch: 
         - name:   execute
           args:
-            cmd:  '/hpcpackages/julia/1.8.3/bin/julia --project ../update_EKP.jl output eki.jld2 `wc -m <REPEAT`'
+            cmd:  '/users/miradh/.julia/juliaup/julia-1.11.6+0.x64.linux.gnu/bin/julia --project ../update_EKP.jl output eki.jld2 `wc -m <REPEAT`'
             log:  True
         - name:   execute
           args:
