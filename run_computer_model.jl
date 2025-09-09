@@ -8,7 +8,7 @@ function path_to_ensemble_member(load_path, iteration, member; pad_zeros = 3)
 
     # Get the directory of the iteration
     load_dir = joinpath(load_path, join(["iteration", lpad(iteration, pad_zeros, "0")], "_"))
-    subdir_name = join(["member", lpad(member, pad_zeros, "0")], "_")
+    subdir_name = join(["member", lpad(member-1, pad_zeros, "0")], "_")
 
     return joinpath(load_dir, subdir_name)
 
