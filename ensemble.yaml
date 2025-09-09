@@ -28,7 +28,7 @@ ensemble:
     repeat:       True
 
   batches:
-    - name:       eki
+    - name:       ensemble_member
       basedir:    ./ensemble
       pre_batch:
         - name:   check
