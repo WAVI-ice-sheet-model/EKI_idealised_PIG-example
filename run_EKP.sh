@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Install required Python packages
+pip install ruamel.yaml
+
 # Get number of iterations from user
 echo "Enter number of EKI iterations (or press Enter for default 20):"
 read -r MAX_ITERS
