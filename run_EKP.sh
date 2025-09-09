@@ -9,7 +9,7 @@ fi
 echo "Using job prefix: $JOB_PREFIX"
 
 # Replace sin_test with user-specified name in ensemble.yaml
-sed -i "s/eki/${JOB_PREFIX}_eki/g" ensemble.yaml
+sed -i "s/ensemble_member/${JOB_PREFIX}_ensemble_member/g" ensemble.yaml
 
 source venv/bin/activate
 # Setup Julia packages
