@@ -37,12 +37,14 @@ This example using Kalman Ensembling to constrain several parameters: weertman_c
 
 ## To run: 
 
-Change the julia filepathways in ```ensemble.yaml```, ```template/run_computer_model.sh.j2```, and ```run_EKP.sh``` to your local installation. 
+Change the julia filepathways in ```ensemble.yaml```, ```template/run_computer_model.sh.j2```, and ```run_EKP.sh``` to your local installation. Then:
 
 ```
 chmod +x *.sh
 ./run_EKP.sh
 ```
+
+You will be prompted to enter the number of ensemble members, number of iterations, and the name of your job. Press enter to leave each as its default (10, 20, username).
 
 ## Output structure
 
