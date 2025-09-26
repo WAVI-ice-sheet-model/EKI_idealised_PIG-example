@@ -1,5 +1,5 @@
 # Description
-This example describes how to install and use [EnsembleKalmanProcesses][1] alongside the [model-ensembler][2], using an idealised Pine Island example. This example is derived from the code in the original library example for learning parameterisations of a sine wave (examples/SinusoidInterface). This current set up is for use on the BAS HPC with julia versions 1.10 and earlier.
+This example describes how to install and use [EnsembleKalmanProcesses][1] alongside the [model-ensembler][2], using an idealised Pine Island example. This example is derived from the code in the original library example for learning parameterisations of a sine wave (examples/SinusoidInterface). The current set up is for use on the BAS HPC with julia versions 1.10 and earlier.
 
 ### Setup
 
@@ -72,6 +72,10 @@ The output will be stored in ```ensemble/output/iteration_XXX/member_XXX```.
 ```outfile.nc``` – all outfiles together in a netcdf.
 
 
+To visualise the results, run ```plot_ensemble.py```. 
+
+
+<img width="3506" height="2070" alt="ensemble" src="https://github.com/user-attachments/assets/81fcb7cb-91c7-4846-97be-5321afd23ab5" />
 
 ## License
 
