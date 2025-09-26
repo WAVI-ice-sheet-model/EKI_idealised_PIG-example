@@ -33,7 +33,7 @@ site.addsitedir('/users/miradh/.local/lib/python3.10/site-packages')
 
 # Combine all netcdfs from all ensemble members for one iteration, for each iteration.
 
-base_dir = "/data/hpcflash/users/miradh/EKI_idealised_PIG-example_juliav10/ensemble/output"
+base_dir = "/data/hpcflash/users/miradh/EKI_idealised_PIG-example/ensemble/output"
 
 iteration_dirs = sorted([d for d in os.listdir(base_dir) if d.startswith("iteration_")])
 
@@ -73,7 +73,7 @@ obs_times = [285, 290, 295, 300]
 obs_volumes = [13.77, 13.37, 12.97, 12.52]
 yerr = [0.1*v for v in obs_volumes]
 
-base_dir = "/data/hpcflash/users/miradh/EKI_idealised_PIG-example_juliav10/ensemble/output"
+base_dir = "/data/hpcflash/users/miradh/EKI_idealised_PIG-example/ensemble/output"
 iteration_files = sorted(glob.glob(os.path.join(base_dir, "iteration_*/combined_outfile.nc")))
 if not iteration_files:
     raise FileNotFoundError(f"No iteration files found in {base_dir}")
@@ -138,7 +138,7 @@ param_names = [
     "glen_a_ref_prefactor"
 ]
 
-base_dir = "/data/hpcflash/users/miradh//EKI_idealised_PIG-example_juliav10/ensemble/output"
+base_dir = "/data/hpcflash/users/miradh//EKI_idealised_PIG-example/ensemble/output"
 
 iteration_dirs = sorted(glob.glob(os.path.join(base_dir, "iteration_*")))
 num_iterations = len(iteration_dirs)
