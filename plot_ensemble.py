@@ -108,7 +108,7 @@ plt.errorbar(obs_times, obs_volumes, yerr=yerr, fmt='o', markersize=7,
 # Colorbar
 sm = ScalarMappable(norm=norm, cmap=iter_cmap)
 sm.set_array([])
-fig.colorbar(sm, ax=ax, label='Iteration', pad=0.02)
+fig.colorbar(sm, ax=ax, label='Iteration', pad=0.02, ticks=range(0, num_iterations+1, 2))
 
 # Legend
 obs_handle = mlines.Line2D([], [], color='red', marker='o', linestyle='None',
