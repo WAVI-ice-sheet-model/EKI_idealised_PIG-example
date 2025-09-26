@@ -72,10 +72,12 @@ The output will be stored in ```ensemble/output/iteration_XXX/member_XXX```.
 ```outfile.nc``` – all outfiles together in a netcdf.
 
 
+
+
 To visualise the results, run ```plot_ensemble.py```. 
 
 
-<img width="3506" height="2070" alt="ensemble" src="https://github.com/user-attachments/assets/81fcb7cb-91c7-4846-97be-5321afd23ab5" />
+<img width="2980" height="1760" alt="ensemble" src="https://github.com/user-attachments/assets/81fcb7cb-91c7-4846-97be-5321afd23ab5" />
 
 ## License
 
