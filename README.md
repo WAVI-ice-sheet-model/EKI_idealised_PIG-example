@@ -69,7 +69,7 @@ The output will be stored in ```ensemble/output/iteration_XXX/member_XXX```.
 
 ```outfileXXXX.mat``` – output files at regular timesteps.
 
-```outfile.nc``` – all outfiles together in a netcdf.
+```outfile.nc``` – all outfiles together in a netcdf.<br><br> 
 
 
 
