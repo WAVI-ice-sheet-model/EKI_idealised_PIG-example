@@ -1,5 +1,5 @@
 # Description
-This example describes how to install and use [EnsembleKalmanProcesses][1] alongside the [model-ensembler][2], using an idealised Pine Island example. This example is derived using code in the original library example for learning parameterisations of a sine wave (examples/SinusoidInterface), and is a modified version of the example in KalmanEnsembling[3]. The current set up is for use on the BAS HPC with julia versions 1.10 and earlier.
+This example describes how to install and use [EnsembleKalmanProcesses][1] alongside the [model-ensembler][2], using an idealised Pine Island example. This example is derived using code in the original library example for learning parameterisations of a sine wave (examples/SinusoidInterface), and is a modified version of the example in [KalmanEnsembling][3]. The current set up is for use on the BAS HPC with julia versions 1.10 and earlier.
 
 ### Setup
 
