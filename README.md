@@ -1,5 +1,5 @@
 # Description
-This example describes how to install and use [EnsembleKalmanProcesses][1] alongside the [model-ensembler][2], using an idealised Pine Island example. This example is derived from the code in the original library example for learning parameterisations of a sine wave (examples/SinusoidInterface). The current set up is for use on the BAS HPC with julia versions 1.10 and earlier.
+This example describes how to install and use [EnsembleKalmanProcesses][1] alongside the [model-ensembler][2], using an idealised Pine Island example. This example is derived using code in the original library example for learning parameterisations of a sine wave (examples/SinusoidInterface), and is a modified version of the example in KalmanEnsembling[3]. The current set up is for use on the BAS HPC with julia versions 1.10 and earlier.
 
 ### Setup
 
@@ -16,7 +16,7 @@ pip install -r requirements.txt
 
 # Idealised Pine Island example using Kalman Ensembling
 
-This example using Kalman Ensembling to constrain several parameters: weertman_c_prefactor (basal sliding prefactor), glen_a_prefactor (ice viscosity prefactor), bump_amplitude (magnitude of the 1940s pycnocline displacement), melt_rate_prefactor (ice-shelf basal melt rate exponent prefactor), per_century_trend (per-century-trend in pycnocline height in metres). These parameters are taken from [Bradley et al. 2025][3]. The priors for these parameters are given in ```Priors.toml```.
+This example using Kalman Ensembling to constrain several parameters: weertman_c_prefactor (basal sliding prefactor), glen_a_prefactor (ice viscosity prefactor), bump_amplitude (magnitude of the 1940s pycnocline displacement), melt_rate_prefactor (ice-shelf basal melt rate exponent prefactor), per_century_trend (per-century-trend in pycnocline height in metres). These parameters are taken from [Bradley et al. 2025][4]. The priors for these parameters are given in ```Priors.toml```.
 
 
 ## Key Files
@@ -87,5 +87,6 @@ This is a derived example from the Julia library and thus the original attributi
 
 [1]: https://github.com/CliMA/EnsembleKalmanProcesses.jl
 [2]: https://github.com/JimCircadian/model-ensembler
-[3]: https://egusphere.copernicus.org/preprints/2025/egusphere-2025-2315/
+[3]: https://github.com/JimCircadian/KalmanEnsembling
+[4]: https://egusphere.copernicus.org/preprints/2025/egusphere-2025-2315/
 
